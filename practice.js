@@ -73,7 +73,7 @@ backPack['firstPocket'] = 'chapstick';
 */
 
 //Code here
-backPack
+
 /*
 You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -112,20 +112,26 @@ user2.email = 'bryan.smith@devmounta.in'
 /*
   Create an empty object called methodCollection.
 */
-
+ var methodCollection = {};
 //Code Here
 
 /*
   Now add two methods (functions that are properties on objects) to your methodCollection object.
   One called 'alertHello' which alerts 'hello' and another method called 'logHello' which logs 'hello' to the console.
 */
-
+  methodCollection['alertHello'] = function(){
+    alert('hello')
+  };
+  methodCollection['logHello'] = function(){
+    console.log('hello')
+  }
 //Code Here
 
 /*
   Now call your alertHello and logHello methods.
 */
-
+methodCollection(alertHello)
+methodCollection(logHello)
 //Code Here
 
 ////////// PROBLEM 6 //////////
@@ -135,6 +141,18 @@ user2.email = 'bryan.smith@devmounta.in'
   Return a new object with all of the information that you passed in.
 */
 
+
+function makePerson(name,birthday,ssn){
+  let newObj = {};
+  newObj['name'] = name;
+  newObj['birthday'] = birthday;
+  newObj['ssn'] = ssn;
+  return newObj;
+}
+
+
+
+
 //Code Here
 
 ////////// PROBLEM 7 //////////
@@ -143,5 +161,12 @@ user2.email = 'bryan.smith@devmounta.in'
   Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object.
   Return that object so that whenever you invoke makeCard, you get a brand new credit card.
 */
-
+function makeCard(cardNumber,expirationDate,securityCode){
+  let CC = {
+    cardNumber: cardNumber,
+    expirationDate: expirationDate,
+    securityCode: securityCode
+  };
+  return CC;
+}
 //Code Here
